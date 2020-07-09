@@ -1,0 +1,46 @@
+---
+authors:
+- admin
+bio: My research interests include water resource management, environmental equity and data science.
+education:
+  courses:
+  - course: MESM in Water Resources & Environmental Data Science
+    institution: Bren School of Environmental Science & Management
+    year: 2020
+  - course: BA in Biological Sciences, Minor in Geosciences
+    institution: Wellesley College
+    year: 2016
+email: ""
+interests:
+- Green Infrastructure
+- Environmental Equity
+- Data Science
+organizations:
+- name:
+  url: ""
+role: Master of Environmental Science & Management
+social:
+- icon: linkedin
+  icon_pack: fa
+  link: https://www.linkedin.com/in/madeline-gorchels-ab786b69/
+- icon: envelope
+  icon_pack: fas
+  link: '#contact'
+- icon: google-scholar
+  icon_pack: ai
+  link: https://scholar.google.co.uk/citations?user=1UgV2wIAAAAJ&hl=en&oi=ao
+- icon: github
+  icon_pack: fab
+  link: https://github.com/gorchels
+superuser: true
+title: Madeline E. Gorchels
+user_groups:
+- Researchers
+- Visitors
+---
+
+As a water manager, Madeline focuses on bringing together diverse stakeholders to increase community resilience. Water uniquely connects people to the environment, but clean drinking water is largely taken for granted in developed countries. Recent domestic and international water management crises highlight how everyone needs to come together to protect their communities’ water. Especially as climate change affects water resource reliability, focusing on water equity work will be crucial for bringing environmental investment to places most in need of water resilience.
+
+Growing up in the wet Pacific Northwest, Madeline has always had an appreciation for the importance of water in both natural and urban ecosystems. She researched aquatic ecology at Wellesley College before deciding to pursue more applied work at the Bren School of Environmental Science & Management, where she graduated with a degree in Water Resource Management and Environmental Data Science in June of 2020. Through her work in water management and data science, she hopes to identify areas in need of environmental investment and improve their resilience and pollution burdens.
+
+When resting her brain, Madeline creates her own vegetarian recipes, goes on long walks with NPR podcasts, and knits.
