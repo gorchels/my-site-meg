@@ -21,7 +21,7 @@ organizations:
 role: Master of Environmental Science & Management
 social:
 - icon: linkedin
-  icon_pack: fa
+  icon_pack: fab
   link: https://www.linkedin.com/in/madeline-gorchels-ab786b69/
 - icon: envelope
   icon_pack: fas
