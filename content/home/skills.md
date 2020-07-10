@@ -15,7 +15,7 @@ subtitle = ""
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
 
 [[feature]]
-  icon = "hand-holding-water"
+  icon = "water"
   icon_pack = "fas"
   name = "Water Management"
   description = "Technical & Policy Analysis"
@@ -30,7 +30,7 @@ subtitle = ""
   icon = "chalkboard-teacher"
   icon_pack = "fas"
   name = "Communication"
-  description = "Published, technical, and public facing"
+  description = "Published, Technical, & Public Facing"
 
 # Uncomment to use emoji icons.
 # [[feature]]
