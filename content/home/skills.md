@@ -21,7 +21,7 @@ subtitle = ""
   description = "90%"
   
 [[feature]]
-  icon = "chart-line"
+  icon = "chart-bar"
   icon_pack = "fas"
   name = "Data Science"
   description = "100%"  
