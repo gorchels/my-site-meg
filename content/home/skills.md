@@ -24,7 +24,7 @@ subtitle = ""
   icon = "chart-bar"
   icon_pack = "fas"
   name = "Data Science"
-  description = "100%"  
+  description = "R, Beginning Python, SQL, Access, Excel"  
   
 [[feature]]
   icon = "camera-retro"
