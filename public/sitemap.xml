@@ -223,7 +223,11 @@
   </url>
   
   <url>
-    <loc>/project/my_test_project/test_project/</loc>
+    <loc>/project/my_test_project/test_project.knit/</loc>
+  </url>
+  
+  <url>
+    <loc>/project/my_test_project/test_project.utf8/</loc>
   </url>
   
   <url>

@@ -1,5 +1,5 @@
 ---
-title: "test_project"
+title: "Example HTML"
 author: "Madeline Gorchels"
 date: "7/13/2020"
 output: html_document
@@ -9,4 +9,3 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-I am a potatoe
