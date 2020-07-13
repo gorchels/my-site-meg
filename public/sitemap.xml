@@ -223,15 +223,11 @@
   </url>
   
   <url>
-    <loc>/project/my_test_project/test_project.knit/</loc>
+    <loc>/project/my_test_project/test_project/</loc>
   </url>
   
   <url>
-    <loc>/project/my_test_project/test_project.utf8/</loc>
-  </url>
-  
-  <url>
-    <loc>/project/uhisocialfactors/socialuhi/</loc>
+    <loc>/project/uhisocialfactors/</loc>
   </url>
   
 </urlset>
