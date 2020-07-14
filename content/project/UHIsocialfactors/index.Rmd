@@ -85,7 +85,7 @@ income_plot = ggplot(census_social)+
   geom_sf(aes(fill = median_income))+
  scale_fill_gradient("Income", low = "lightcyan", high = "orchid4", breaks=c(50000, 100000, 150000, 200000), labels=c("$50,000","$100,000","$150,000","$200,000"))+
   #coord_sf(xlim = mapRange[c(1:2)], ylim = mapRange[c(3:4)])+
-  labs(x = "", y = "", title = "Median Income in 2017")+
+  labs(x = "", y = "", title = "Travis County, TX by Census Tract")+
  # geom_sf(data = Wallercreek, 
   #        fill = "NA", 
    #       color = "black", 
@@ -94,12 +94,36 @@ income_plot = ggplot(census_social)+
   #coord_sf(datum=NA,xlim = mapRange[c(1:2)], ylim = mapRange[c(3:4)])
   coord_sf(datum=NA)
 
+uhi_plot = ggplot(census_social)+
+  geom_sf(aes(fill = uhi.x))+
+  scale_fill_gradient("UHI Relative Intensity", low = "oldlace", high = "red4")+
+  
+  labs(x = "", y = "")+ #title = "Relative Urban Heat Island Intensity of Travis County, Census \nTracts Based off Land Surface Temperature")+
+  #geom_sf(data = Wallercreek, 
+   #       fill = "NA", 
+    #      color = "black", 
+     #     size = 1)+
+  theme_minimal()+
+  coord_sf(datum=NA)
+
+tree_plot = ggplot(census_social)+
+  geom_sf(aes(fill = tree_intensity))+
+  scale_fill_gradient("Relative Tree Canopy Coverage", low = "lightyellow", high = "darkgreen", breaks=c(0,9.818678e-07),labels=c("Low","High"))+
+  labs(x = "", y = "")+# title = "Relative Tree Canopy Coverage in Travis County, TX by Census Tract in 2017")+
+  #geom_sf(data = Wallercreek, 
+   #       fill = "NA", 
+    #      color = "black", 
+     #     size = 1)+
+  theme_minimal()+
+  coord_sf(datum=NA)
 
 ```
 
 
 ```{r, echo=FALSE, message=FALSE}
 income_plot 
+tree_plot
+uhi_plot
 ```
 
 
@@ -177,9 +201,9 @@ racial_makeup = census_social %>%
 ```{r, echo=FALSE,warning=FALSE}
 race_plot = ggplot(racial_makeup)+
   geom_sf(aes(fill = nonwhite))+
-  scale_fill_gradient("nonwhite", low = "white", high = "chocolate")+
+  scale_fill_gradient("Proportion Nonwhite", low = "white", high = "chocolate")+
   #coord_sf(xlim = mapRange[c(1:2)], ylim = mapRange[c(3:4)])+
-  labs(x = "", y = "", title = "Proportion Non White in 2017")+
+  labs(x = "", y = "", title = "Travis County, TX by Census Tract")+
   #geom_sf(data = Wallercreek, 
    #       fill = "NA", 
     #      color = "black", 
@@ -189,6 +213,8 @@ race_plot = ggplot(racial_makeup)+
   coord_sf(datum=NA)
 
 race_plot
+tree_plot
+uhi_plot
 ```
 
 ```{r, include=FALSE}
