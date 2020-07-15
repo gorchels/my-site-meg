@@ -9,8 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 
-## Load Packages
-```{r}
+```{r, include=FALSE}
 library(sf)
 library(raster)
 library(tidyverse)
@@ -19,15 +18,8 @@ library(mapview)
 library(rgdal)
 ```
 
-# Site suitability analysis for wind power subsidies {.tabset}
 
-## Overview
-
-Recreate HW3 from ESM 263 in R, using 'HW3.gdb', 'Basemap.gdb', and a raster of 'Wind2002.tif'
-
--open source .gdb do not like to put rasters in
-
-```{r}
+```{r, include=FALSE}
 base_rast = raster::raster('data/Wind2002.tif')
 #plot(base_rast)
 
@@ -43,7 +35,7 @@ ca_alb = st_crs(county_sf) # can reuse this crs later now
 ```
 
 
-```{r}
+```{r, echo=FALSE}
 ggplot()+
   theme_minimal()+
   geom_sf(data = county_sf, fill = 'grey30')+
@@ -52,11 +44,8 @@ ggplot()+
   geom_sf_text(data = cities_sf, aes(label = CITY), color = "white", size = 3)
 ```
 
-## Create some masks {.tabset}
 
-### Create wind mask
-![](img/wind.jpg)
-```{r}
+```{r, echo=FALSE}
 wind_raw_rast = raster('data/Wind2002.tif')
 plot(wind_raw_rast, main = "Raw wind raster") #look at help for Reclassify 
 
