@@ -231,4 +231,8 @@
     <loc>/project/my_test_project/test_project/</loc>
   </url>
   
+  <url>
+    <loc>/project/wind/</loc>
+  </url>
+  
 </urlset>

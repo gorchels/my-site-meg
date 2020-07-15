@@ -837,5 +837,217 @@ Figure 1: A fancy pie chart.
 </description>
     </item>
     
+    <item>
+      <title>Wind Turbine Site Suitability for Santa Barbara County</title>
+      <link>/project/wind/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/wind/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/jquery/jquery.min.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/leaflet/leaflet.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/leaflet/leaflet.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/leafletfix/leafletfix.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/rstudio_leaflet/rstudio_leaflet.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/leaflet-binding/leaflet.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/leaflet-providers/leaflet-providers_1.9.0.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/leaflet-providers-plugin/leaflet-providers-plugin.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/suitable_mask/data_stars_suitable_maskc83f2d.txt&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/joda/joda.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/joda/addImageQuery-bindings.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/clipboard/setClipboardText.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/HomeButton/home-button.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/HomeButton/home-button.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/HomeButton/easy-button-src.min.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;load-packages&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Load Packages&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(sf)
+library(raster)
+library(tidyverse)
+library(fasterize)
+library(mapview)
+library(rgdal)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;site-suitability-analysis-for-wind-power-subsidies&#34; class=&#34;section level1 tabset&#34;&gt;
+&lt;h1&gt;Site suitability analysis for wind power subsidies&lt;/h1&gt;
+&lt;div id=&#34;overview&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;p&gt;Recreate HW3 from ESM 263 in R, using &#39;HW3.gdb&#39;, &#39;Basemap.gdb&#39;, and a raster of &#39;Wind2002.tif&#39;&lt;/p&gt;
+&lt;p&gt;-open source .gdb do not like to put rasters in&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;base_rast = raster::raster(&amp;#39;data/Wind2002.tif&amp;#39;)
+#plot(base_rast)
+
+county_sf = sf::st_read(&amp;#39;data/county.shp&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Reading layer `county&amp;#39; from data source `/Users/madelinegorchels/Desktop/Professional/my-site-meg/content/project/wind/data/county.shp&amp;#39; using driver `ESRI Shapefile&amp;#39;
+## Simple feature collection with 1 feature and 5 fields
+## geometry type:  MULTIPOLYGON
+## dimension:      XY
+## bbox:           xmin: -61331.61 ymin: -404661 xmax: 51436.65 ymax: -322501
+## CRS:            3310&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;st_layers(&amp;#39;data/Basemap.gdb&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Driver: OpenFileGDB 
+## Available layers:
+##       layer_name     geometry_type features fields
+## 1         Cities     Multi Polygon        8      5
+## 2      Locations             Point      266      3
+## 3         Places             Point       19     10
+## 4        Summits             Point       73      2
+## 5      Landmarks     Multi Polygon       95      5
+## 6    MajorRivers Multi Line String       18      6
+## 7          Parks     Multi Polygon      127      5
+## 8          Water     Multi Polygon       61      9
+## 9    Interstates Multi Line String       70      7
+## 10         State     Multi Polygon        1     49
+## 11 Cities_Points             Point     1386      7
+## 12        County     Multi Polygon        1      5&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cities_sf = sf::read_sf(dsn = &amp;#39;data/Basemap.gdb&amp;#39;, layer = &amp;#39;Cities&amp;#39;)
+
+#roads_sf = sf::read_sf(dsn = &amp;#39;data/Basemap.gdb&amp;#39;, layer = &amp;#39;CenterLines2008&amp;#39;)
+
+ca_alb = st_crs(county_sf) # can reuse this crs later now &lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot()+
+  theme_minimal()+
+  geom_sf(data = county_sf, fill = &amp;#39;grey30&amp;#39;)+
+  #geom_sf(data = roads_sf, color = &amp;#39;darkred&amp;#39;, size = 0.25)+
+  geom_sf(data = cities_sf, fill = &amp;#39;grey40&amp;#39;, color = &amp;#39;grey50&amp;#39;)+
+  geom_sf_text(data = cities_sf, aes(label = CITY), color = &amp;quot;white&amp;quot;, size = 3)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/wind/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;create-some-masks&#34; class=&#34;section level2 tabset&#34;&gt;
+&lt;h2&gt;Create some masks&lt;/h2&gt;
+&lt;div id=&#34;create-wind-mask&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Create wind mask&lt;/h3&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;img/wind.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;wind_raw_rast = raster(&amp;#39;data/Wind2002.tif&amp;#39;)
+plot(wind_raw_rast, main = &amp;quot;Raw wind raster&amp;quot;) #look at help for Reclassify &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/wind/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rcl_mtx = matrix(data = c(c(1, 2, 3, 4, 5, 6, 7),
+                          c(NA, NA, 1, 1, 1, 1, 1)), 
+                 ncol = 2, byrow = FALSE) 
+wind_mask_rast = reclassify(wind_raw_rast, rcl = rcl_mtx)
+plot(wind_mask_rast)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/wind/index_files/figure-html/unnamed-chunk-4-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;caseys-preferred-way&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Casey&#39;s preferred way&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;wind_mask2 = wind_raw_rast
+
+tmp = 1:50
+tmp[10:15] #indexes the vector &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 10 11 12 13 14 15&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp[tmp&amp;gt;15 &amp;amp; tmp &amp;lt;40] = 10000 # this selects some and replaces it with a number 
+
+values(wind_mask2)[values(wind_mask2) &amp;lt;= 2] = NA #Gives us 3-7, doesn&amp;#39;t have to be ones and NAs
+wind_mask2 = wind_mask2/wind_mask2
+
+#writeRaster(wind_mask2, &amp;#39;output/wind_mask.tif&amp;#39;, overwrite = TRUE) &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;create-road-mask&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Create road mask&lt;/h3&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;img/roads.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;Creating the Roads mask and giving it the option to skip over if the file already exists&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;road_mask_file = &amp;#39;output/road_mask.shp&amp;#39;
+
+if(file.exists(road_mask_file) ==FALSE) { #this if statement allows us to skip this step if this exists already 
+  roads_raw_sf = sf::read_sf(dsn = &amp;#39;data/HW3.gdb&amp;#39;,
+                         layer = &amp;#39;CenterLines2008&amp;#39;)
+
+
+#st_layers(&amp;#39;data/HW3.gdb&amp;#39;)
+roads_raw_sf = sf::read_sf(dsn = &amp;#39;data/HW3.gdb&amp;#39;,
+                       layer = &amp;quot;CenterLines2008&amp;quot;)
+#st_crs(roads_raw_sf) #wrong projection and is in feet
+
+roads_projected_sf = st_transform(roads_raw_sf, ca_alb) 
+
+roads_mask_sf = roads_projected_sf %&amp;gt;% 
+  st_buffer(dist = 7500) %&amp;gt;% #creates buffer around the roads
+  st_union() %&amp;gt;% #stacks everything makes it simpler 
+  st_intersection((county_sf)) #clips to county
+write_sf(roads_mask_sf, road_mask_file)
+} #end of test 
+
+roads_mask_sf = read_sf(road_mask_file)
+plot(roads_mask_sf)#select the first variable&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/wind/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;roads_mask_rast = fasterize::fasterize(sf = roads_mask_sf, 
+                                       raster = base_rast) #will convert an sf to a raster that we want it to look like 
+plot(roads_mask_rast)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/wind/index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#writeRaster(roads_mask_rast, &amp;#39;output/road_mask.tif&amp;#39;, overwrite=TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Quick check to compare the rasters&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;source(&amp;#39;helper_fxns.R&amp;#39;)
+roads_key = raster(&amp;#39;hw3_arc_outputs/road_mask.tif&amp;#39;)
+#plot_diffs(roads_key, roads_mask_rast) #Can see around the edges there are differences between the two different methods &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;urban-mask-skipping-other-masks-for-now-see-the-other-code-for-the-urban-mask&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Urban Mask: Skipping other masks for now, see the other code for the Urban mask&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div id=&#34;create-public-mask&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Create public mask&lt;/h3&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;img/public.jpg&#34; /&gt;
+
+&lt;/div&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;public_mask_file = &amp;#39;output/public_mask.gpkg&amp;#39; #geopackage, one file instead of four-eight
+
+#if(!file.exists(public_mask_file))
+
+{
+parcels_sf = read_sf(dsn = &amp;#39;data/HW3.gdb&amp;#39;, layer = &amp;#39;Parcels&amp;#39;)
+parcels_public = parcels_sf %&amp;gt;% 
+  st_transform(ca_alb) %&amp;gt;% 
+  filter(USECODE &amp;gt;= &amp;#39;6000&amp;#39; &amp;amp; USECODE &amp;lt; &amp;#39;9000&amp;#39;) %&amp;gt;% #using text feidl not number field
+  st_union() #flatten into one thing
+
+public_mask_sf = st_difference(county_sf,
+                               parcels_public)
+#mapview(public_mask_sf)
+write_sf(public_mask_sf, public_mask_file)
+}
+public_mask_sf = read_sf(public_mask_file)
+
+
+public_mask_rast = fasterize(public_mask_sf, base_rast)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;quick-analysis&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Quick analysis&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;suitable_mask = wind_mask_rast %&amp;gt;% 
+  raster::mask(roads_mask_sf) %&amp;gt;% 
+  mask(public_mask_rast)
+
+mapview(suitable_mask)&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;htmlwidget-1&#34; style=&#34;width:672px;height:480px;&#34; class=&#34;leaflet html-widget&#34;&gt;&lt;/div&gt;
+&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-1&#34;&gt;{&#34;x&#34;:{&#34;options&#34;:{&#34;minZoom&#34;:1,&#34;maxZoom&#34;:52,&#34;crs&#34;:{&#34;crsClass&#34;:&#34;L.CRS.EPSG3857&#34;,&#34;code&#34;:null,&#34;proj4def&#34;:null,&#34;projectedBounds&#34;:null,&#34;options&#34;:{}},&#34;preferCanvas&#34;:false,&#34;bounceAtZoomLimits&#34;:false,&#34;maxBounds&#34;:[[[-90,-370]],[[90,370]]]},&#34;calls&#34;:[{&#34;method&#34;:&#34;addProviderTiles&#34;,&#34;args&#34;:[&#34;CartoDB.Positron&#34;,1,&#34;CartoDB.Positron&#34;,{&#34;errorTileUrl&#34;:&#34;&#34;,&#34;noWrap&#34;:false,&#34;detectRetina&#34;:false}]},{&#34;method&#34;:&#34;addProviderTiles&#34;,&#34;args&#34;:[&#34;CartoDB.DarkMatter&#34;,2,&#34;CartoDB.DarkMatter&#34;,{&#34;errorTileUrl&#34;:&#34;&#34;,&#34;noWrap&#34;:false,&#34;detectRetina&#34;:false}]},{&#34;method&#34;:&#34;addProviderTiles&#34;,&#34;args&#34;:[&#34;OpenStreetMap&#34;,3,&#34;OpenStreetMap&#34;,{&#34;errorTileUrl&#34;:&#34;&#34;,&#34;noWrap&#34;:false,&#34;detectRetina&#34;:false}]},{&#34;method&#34;:&#34;addProviderTiles&#34;,&#34;args&#34;:[&#34;Esri.WorldImagery&#34;,4,&#34;Esri.WorldImagery&#34;,{&#34;errorTileUrl&#34;:&#34;&#34;,&#34;noWrap&#34;:false,&#34;detectRetina&#34;:false}]},{&#34;method&#34;:&#34;addProviderTiles&#34;,&#34;args&#34;:[&#34;OpenTopoMap&#34;,5,&#34;OpenTopoMap&#34;,{&#34;errorTileUrl&#34;:&#34;&#34;,&#34;noWrap&#34;:false,&#34;detectRetina&#34;:false}]},{&#34;method&#34;:&#34;addRasterImage&#34;,&#34;args&#34;:[&#34;data:image/png;base64,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&#34;,[[35.1038303714881,-120.666783028986],[34.4410945411686,-119.450287609362]],0.8,null,&#34;suitable_mask&#34;,&#34;suitable_mask&#34;]},{&#34;method&#34;:&#34;removeLayersControl&#34;,&#34;args&#34;:[]},{&#34;method&#34;:&#34;addLayersControl&#34;,&#34;args&#34;:[[&#34;CartoDB.Positron&#34;,&#34;CartoDB.DarkMatter&#34;,&#34;OpenStreetMap&#34;,&#34;Esri.WorldImagery&#34;,&#34;OpenTopoMap&#34;],&#34;suitable_mask&#34;,{&#34;collapsed&#34;:true,&#34;autoZIndex&#34;:true,&#34;position&#34;:&#34;topleft&#34;}]},{&#34;method&#34;:&#34;addControl&#34;,&#34;args&#34;:[&#34;&#34;,&#34;topright&#34;,&#34;imageValues-suitable_mask&#34;,&#34;info legend &#34;]},{&#34;method&#34;:&#34;addImageQuery&#34;,&#34;args&#34;:[&#34;suitable_mask&#34;,[-120.666783028986,34.4410945411686,-119.450287609362,35.1038303714881],&#34;mousemove&#34;,7,&#34;Layer&#34;]},{&#34;method&#34;:&#34;addLegend&#34;,&#34;args&#34;:[{&#34;colors&#34;:[&#34;#010005 , #010005 50%, #010005 &#34;],&#34;labels&#34;:[&#34;1&#34;],&#34;na_color&#34;:&#34;#BEBEBE&#34;,&#34;na_label&#34;:&#34;NA&#34;,&#34;opacity&#34;:1,&#34;position&#34;:&#34;topright&#34;,&#34;type&#34;:&#34;numeric&#34;,&#34;title&#34;:&#34;suitable_mask&#34;,&#34;extra&#34;:{&#34;p_1&#34;:0.5,&#34;p_n&#34;:0.5},&#34;layerId&#34;:null,&#34;className&#34;:&#34;info legend&#34;,&#34;group&#34;:&#34;suitable_mask&#34;}]},{&#34;method&#34;:&#34;addScaleBar&#34;,&#34;args&#34;:[{&#34;maxWidth&#34;:100,&#34;metric&#34;:true,&#34;imperial&#34;:true,&#34;updateWhenIdle&#34;:true,&#34;position&#34;:&#34;bottomleft&#34;}]},{&#34;method&#34;:&#34;addHomeButton&#34;,&#34;args&#34;:[-120.673370549309,34.3721698422097,-119.434916728609,35.1146210050324,&#34;suitable_mask&#34;,&#34;Zoom to suitable_mask&#34;,&#34;&lt;strong&gt; suitable_mask &lt;\/strong&gt;&#34;,&#34;bottomright&#34;]}],&#34;limits&#34;:{&#34;lat&#34;:[34.4410945411686,35.1038303714881],&#34;lng&#34;:[-120.666783028986,-119.450287609362]}},&#34;evals&#34;:[],&#34;jsHooks&#34;:{&#34;render&#34;:[{&#34;code&#34;:&#34;function(el, x, data) {\n  return (\n      function(el, x, data) {\n      // get the leaflet map\n      var map = this; //HTMLWidgets.find(&#39;#&#39; + el.id);\n      // we need a new div element because we have to handle\n      // the mouseover output separately\n      // debugger;\n      function addElement () {\n      // generate new div Element\n      var newDiv = $(document.createElement(&#39;div&#39;));\n      // append at end of leaflet htmlwidget container\n      $(el).append(newDiv);\n      //provide ID and style\n      newDiv.addClass(&#39;lnlt&#39;);\n      newDiv.css({\n      &#39;position&#39;: &#39;relative&#39;,\n      &#39;bottomleft&#39;:  &#39;0px&#39;,\n      &#39;background-color&#39;: &#39;rgba(255, 255, 255, 0.7)&#39;,\n      &#39;box-shadow&#39;: &#39;0 0 2px #bbb&#39;,\n      &#39;background-clip&#39;: &#39;padding-box&#39;,\n      &#39;margin&#39;: &#39;0&#39;,\n      &#39;padding-left&#39;: &#39;5px&#39;,\n      &#39;color&#39;: &#39;#333&#39;,\n      &#39;font&#39;: &#39;9px/1.5 \&#34;Helvetica Neue\&#34;, Arial, Helvetica, sans-serif&#39;,\n      &#39;z-index&#39;: &#39;700&#39;,\n      });\n      return newDiv;\n      }\n\n\n      // check for already existing lnlt class to not duplicate\n      var lnlt = $(el).find(&#39;.lnlt&#39;);\n\n      if(!lnlt.length) {\n      lnlt = addElement();\n\n      // grab the special div we generated in the beginning\n      // and put the mousmove output there\n\n      map.on(&#39;mousemove&#39;, function (e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector(&#39;.lnlt&#39;) === null) lnlt = addElement();\n      lnlt.text(\n                           &#39; lon: &#39; + (e.latlng.lng).toFixed(5) +\n                           &#39; | lat: &#39; + (e.latlng.lat).toFixed(5) +\n                           &#39; | zoom: &#39; + map.getZoom() +\n                           &#39; | x: &#39; + L.CRS.EPSG3857.project(e.latlng).x.toFixed(0) +\n                           &#39; | y: &#39; + L.CRS.EPSG3857.project(e.latlng).y.toFixed(0) +\n                           &#39; | epsg: 3857 &#39; +\n                           &#39; | proj4: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs &#39;);\n      } else {\n      if (document.querySelector(&#39;.lnlt&#39;) === null) lnlt = addElement();\n      lnlt.text(\n                      &#39; lon: &#39; + (e.latlng.lng).toFixed(5) +\n                      &#39; | lat: &#39; + (e.latlng.lat).toFixed(5) +\n                      &#39; | zoom: &#39; + map.getZoom() + &#39; &#39;);\n      }\n      });\n\n      // remove the lnlt div when mouse leaves map\n      map.on(&#39;mouseout&#39;, function (e) {\n      var strip = document.querySelector(&#39;.lnlt&#39;);\n      strip.remove();\n      });\n\n      };\n\n      //$(el).keypress(67, function(e) {\n      map.on(&#39;preclick&#39;, function(e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector(&#39;.lnlt&#39;) === null) lnlt = addElement();\n      lnlt.text(\n                      &#39; lon: &#39; + (e.latlng.lng).toFixed(5) +\n                      &#39; | lat: &#39; + (e.latlng.lat).toFixed(5) +\n                      &#39; | zoom: &#39; + map.getZoom() + &#39; &#39;);\n      var txt = document.querySelector(&#39;.lnlt&#39;).textContent;\n      console.log(txt);\n      //txt.innerText.focus();\n      //txt.select();\n      setClipboardText(&#39;\&#34;&#39; + txt + &#39;\&#34;&#39;);\n      }\n      });\n\n      }\n      ).call(this.getMap(), el, x, data);\n}&#34;,&#34;data&#34;:null}]}}&lt;/script&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mask_stack = raster::stack(wind_mask_rast,
+                           roads_mask_rast,
+                           public_mask_rast)
+plot(mask_stack)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/wind/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;suitable_stack = mask_stack %&amp;gt;% 
+  raster::calc(fun = prod) #want NA to screw it up
+
+plot(suitable_stack)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/wind/index_files/figure-html/unnamed-chunk-10-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;suitable_sum = mask_stack %&amp;gt;% 
+  calc(fun=sum, na.rm=TRUE)
+plot(suitable_sum)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/wind/index_files/figure-html/unnamed-chunk-10-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
