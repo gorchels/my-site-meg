@@ -25,6 +25,58 @@
 &lt;img src=&#34;HW3Gorchels-1.png&#34; /&gt;
 
 &lt;/div&gt;
+
+
+
+&lt;/div&gt;
+
+
+
+
+&lt;/div&gt;
+
+&lt;script&gt;
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $(&#39;tr.header&#39;).parent(&#39;thead&#39;).parent(&#39;table&#39;).addClass(&#39;table table-condensed&#39;);
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+&lt;/script&gt;
+
+&lt;!-- tabsets --&gt;
+
+&lt;script&gt;
+$(document).ready(function () {
+  window.buildTabsets(&#34;TOC&#34;);
+});
+
+$(document).ready(function () {
+  $(&#39;.tabset-dropdown &gt; .nav-tabs &gt; li&#39;).click(function () {
+    $(this).parent().toggleClass(&#39;nav-tabs-open&#39;)
+  });
+});
+&lt;/script&gt;
+
+&lt;!-- code folding --&gt;
+
+
+&lt;!-- dynamically load mathjax for compatibility with self-contained --&gt;
+&lt;script&gt;
+  (function () {
+    var script = document.createElement(&#34;script&#34;);
+    script.type = &#34;text/javascript&#34;;
+    script.src  = &#34;https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;;
+    document.getElementsByTagName(&#34;head&#34;)[0].appendChild(script);
+  })();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
 </description>
     </item>
     
