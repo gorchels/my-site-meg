@@ -1,52 +1,43 @@
 ---
-abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus
-  ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed
-  ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis
-  sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida
-  egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id
-  dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus.
-  Vestibulum sit amet erat at nulla eleifend gravida.
+abstract: Over the next century, climate change adaptation measures will require significant investment in building, improving, and changing urban water infrastructure. These measures will require multifaceted strategies that can simultaneously address many challenges, such as flooding, impaired water quality, and lowered efficiency. These strategies will also provide key co-benefits, such as energy savings and lowering greenhouse gas emissions. To meet the need for a standardized approach to quantifying these co-benefits, the Pacific Institute developed the Multi-Benefit Framework (MBF). As part of its efforts to improve urban hydrology in Austin, Texas, the city’s Watershed Protection Department (WPD) installed rain cisterns and rain gardens on twenty-five homeowners’ properties within its upper Waller Watershed in 2017. Austin WPD’s Rain Catcher Pilot Program (RCPP) aimed to improve watershed health, reduce flooding, and augment local water supplies within the greater Austin area. This project used the Pacific Institute’s MBF to quantify co-benefits that will occur when RCPP is scaled up to 1200 homes in 2022. Co-benefits include urban heat island temperature reductions, energy savings, and improved health and equity outcomes within the Waller-3 project area. We have (a) quantified energy savings from improved water conveyance and urban heat island temperature reductions, (b) identified and evaluated opportunities for incorporating equity into the RCPP, and (c) compiled useful resources for decision-makers who plan to employ the framework in evaluating future water projects. 
 author_notes:
 - Equal contribution
 - Equal contribution
 authors:
 - admin
-- Robert Ford
-date: "2015-09-01T00:00:00Z"
+- Kristan Culbert
+- Kelly Odion
+- Alex Brown
+date: "2020-04-01T00:00:00Z"
 doi: ""
-featured: false
+featured: true
 image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/jdD8gXaTZsc)'
   focal_point: ""
   preview_only: false
-projects: []
-publication: '*Journal of Source Themes, 1*(1)'
+projects:
+- external-project
+#publication: '*Journal of Source Themes, 1*(1)'
 publication_short: ""
 publication_types:
-- "2"
-publishDate: "2017-01-01T00:00:00Z"
-slides: example
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus
-  ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
+- "7"
+publishDate: "2020-04-01T00:00:00Z"
+#slides: example
+summary: This thesis quantified the energy reductions and urban heat island benefits of green infrastructure in Austin, TX. We also proposed specific policies to promote improved equity in future green infrastructure projects.
 tags:
-- Source Themes
-title: An example journal article
-url_code: ""
-url_dataset: ""
-url_pdf: http://arxiv.org/pdf/1512.04133v1
-url_poster: ""
-url_project: ""
-url_slides: ""
-url_source: ""
-url_video: ""
+- Water Resources
+- Data Science
+- Environmental Equity
+- UHI
+- Energy
+title: Evaluating Multiple Benefits of Urban Rainwater Catchment Systems in Austin, Texas
+#url_code: ""
+#url_dataset: ""
+url_pdf: https://drive.google.com/file/d/1ld0jbfmLdebHPHuyW5DHg_Z3CVtIJGl_/view?usp=sharing
+url_poster: https://drive.google.com/file/d/1C4APZw1qX6pbE2HH6i2Xwa9YceTCVCRf/view?usp=sharing
+url_brief: https://drive.google.com/file/d/1DbLHeXlD72dP-bGZFTm2uAJ9sfhaiLws/view?usp=sharing
+#url_slides: ""
+#url_source: ""
+url_video: https://drive.google.com/file/d/1DliaO9XSkZmxn7cDPDKrnDSKei-PV-EG/view?usp=sharing
 ---
 
-{{% alert note %}}
-Click the *Cite* button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-{{% /alert %}}
-
-{{% alert note %}}
-Click the *Slides* button above to demo Academic's Markdown slides feature.
-{{% /alert %}}
-
-Supplementary notes can be added here, including [code and math](https://sourcethemes.com/academic/docs/writing-markdown-latex/).
