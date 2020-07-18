@@ -1,7 +1,12 @@
 ---
-title: "Urban Heat Island, Tree Cover, and the 2017 American Community Survey"
+title: "Urban Heat Island, Tree Cover, and Communities"
 output: html_document
 date: "2019-08-01T00:00:00Z"
+tags:
+- Water Resources
+- Data Science
+- Environmental Equity
+- UHI
 ---
 
 ```{r setup, include=FALSE}
@@ -80,7 +85,7 @@ mapRange <- c(range(st_coordinates(Wallercreek)[,1]),range(st_coordinates(Waller
 
 Air temperatures in cities are substantially higher than in adjacent rural areas. In the United States, the average difference can be as much as 16°F for severely affected cities (Imoff et al. 2010). This phenomenon, known as urban heat island (UHI), results from differences in surface heat reflection and absorption. High levels of dark, impervious surfaces; lack of vegetation; and urban geometries increase absorption and decrease evapotranspiration. This leads to increases in temperature and thermal discomfort. Increased thermal discomfort can cause psychological stress, decrease productivity, and lead to death in vulnerable populations (Poumadere 2003, Kovats 2008, Kjellstrom 2009).
 
-One cost effective way to mitigate UHI is through a mature tree canopy. However, trees are not evenly distributed in American cities. The 2017 American Community survey, tree canopy data, and UHI around Austin, TX shows patterns in how trees are distributed by income and race.
+One cost effective way to mitigate UHI is through a mature tree canopy. However, trees are not evenly distributed in American cities. Census and tree canopy data around Austin, TX shows patterns in how trees are distributed by social factors. The figure below shows patterns betweens median household income and tree cover. Census tracts with higher income generally appear to have a higher tree cover. 
 
 
 ```{r, echo=FALSE, warning=FALSE, output=FALSE, message=FALSE}
@@ -126,9 +131,10 @@ tree_plot = ggplot(census_social)+
 ```{r, echo=FALSE, message=FALSE}
 income_plot 
 tree_plot
-uhi_plot
+#uhi_plot
 ```
 
+This visual association is backed up by regressional analysis. There is a significant association between tree cover and median income for the Austin area (see figure below, *** indicates p<0.001).  
 
 ```{r, include=FALSE}
 income_plot_waller = ggplot(census_social)+
@@ -158,7 +164,7 @@ income_plot_waller
 tree_income_scatter = ggplot(census_social)+
   geom_point(aes(x = tree_intensity,y=median_income))+
   theme_classic()+
-  labs(title = "Relationship Between Median Income and Simulated \nTree Canopy by Austin Census Tract", y = "Median Income in 2017", x = "Simulated Tree Intensity")+
+  labs(y = "Median Income in 2017", x = "Simulated Tree Intensity")+ #title = "Relationship Between Median Income and Simulated \nTree Canopy by Austin Census Tract"
   geom_smooth(method = "lm", aes(x = tree_intensity,y=median_income))+
   geom_text(x = 1.0e-07, y = 150000, aes(label = "*** R Squared = 0.30"))+
   scale_x_continuous()+
@@ -185,7 +191,7 @@ income_uhi_plot =ggplot(census_social)+
 ```
 
 ```{r, echo=FALSE, warning=FALSE, output=FALSE, message=FALSE}
-income_uhi_plot
+#income_uhi_plot
 ```
 
 
@@ -200,6 +206,7 @@ racial_makeup = census_social %>%
   mutate(nonwhite = black_p+asian_p+latinx_p+pacific_islander_p+native_am_p)
 ```
 
+In addition to an association with income, tree canopy cover also shows a relationship with race. 
 
 ```{r, echo=FALSE,warning=FALSE}
 race_plot = ggplot(racial_makeup)+
@@ -217,7 +224,7 @@ race_plot = ggplot(racial_makeup)+
 
 race_plot
 tree_plot
-uhi_plot
+#uhi_plot
 ```
 
 ```{r, include=FALSE}
@@ -237,8 +244,9 @@ race_plot_waller = ggplot(racial_makeup)+
 race_plot_waller
 ```
 
+Like the relationship between income and trees, regressional analysis shows this is a statistically significant relationship (see figure below, *** indicates p<0.001).
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
+```{r, include=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 #race_uhi_regress = lm(nonwhite~uhi.x, data = racial_makeup)
 #summary(race_uhi_regress)
 
@@ -258,11 +266,15 @@ ggplot(racial_makeup)+
 ggplot(racial_makeup)+
   geom_point(aes(x = tree_intensity,y=nonwhite))+
   theme_classic()+
-  labs(title = "Relationship Between Proportion Non White and Simulated \nTree Canopy by Austin Census Tract", y = "Proportion Non White in 2017", x = "Simulated Tree Intensity")+
+  labs(y = "Proportion Non White in 2017", x = "Simulated Tree Intensity")+ #(title = "Relationship Between Proportion Non White and Simulated \nTree Canopy by Austin Census Tract",
   geom_smooth(method = "lm", aes(x = tree_intensity,y=nonwhite))+
   geom_text(x = 1.0e-07, y = 0.24, aes(label = "*** R Squared = 0.23"))+
   scale_x_continuous()
 ```
+
+##Conclusions
+
+Tree canopy is a cost effective way to mitigate the dangerous health and social impacts from urban heat island. However, tree cover shows uneven distribution in Austin, TX with race and income. Visualizations and statistical analysis both show an association with more tree cover in higher income, whiter areas. Regressional analysis only demonstrates the these factors are related not that these factors are directly causal. As a result, the associations shown above do not necissarily imply these census tracts were caused to be less or more tree covered due to racial or income demographics. However, this analysis does show tree cover is not evenly distributed by social class. Regardless of cause, lower income, nonwhite people in Austin are less likely to have tree cover than high income white neighborhoods. Unequal tree cover is an important environmental equity concern for Austin, TX and needs to be addressed in any city environmental plan. 
 
 ##References
 Imhoff ML, Zhang P, Wolfe RE, Bounoua L. Remote sensing of the urban heat island effect across biomes in the continental USA. Remote Sens Environ. 2010;114(3):504-513. doi:10.1016/j.rse.2009.10.008

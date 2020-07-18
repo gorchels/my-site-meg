@@ -25,8 +25,7 @@ publication_types:
 - "4"
 publishDate: "2020-06-01T00:00:00Z"
 #slides: example
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus
-  ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
+summary: This report discusses the multiple benefits for green stormwater infrastructure in Austin, TX. 
 tags:
 - Water Resources
 - Environmental Equity
