@@ -123,25 +123,5 @@ $(document).ready(function () {
       <description></description>
     </item>
     
-    <item>
-      <title>Internal Project</title>
-      <link>/project/internal-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/internal-project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Example HTML</title>
-      <link>/project/my_test_project/test_project/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/project/my_test_project/test_project/</guid>
-      <description>
-
-
-
-</description>
-    </item>
-    
   </channel>
 </rss>
