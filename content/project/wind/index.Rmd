@@ -8,7 +8,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 
-Wind power is an essential part of reducing green house gases. However, installing wind projects poses challenges from permitting to NIMBY-ism. As part of a course of using spatial analysis to address environmental issues, I developed an ArcMap tool that takes information on roads, cities, airports, potential for fires, and land use to generate optimal sites for wind development. The following map shows an example of this tool being used for Santa Barbara County. The areas shown below are the 10 largest contiguous areas that met all criteria, though many more sites were found. 
+Wind power is an essential tool to reduce greenhouse gas emissions. However, installing wind projects poses challenges from permitting to NIMBY-ism. As part of a spatial analysis and environmental management course, I developed an ArcMap tool that takes information on roads, cities, airports, potential for fires, and land use to generate optimal sites for wind development. The following map shows an example of this tool being used for Santa Barbara County. The areas shown below are the 10 largest contiguous areas that met all criteria, though many more sites were found. 
 
 ```{r image-ref-for-in-text, include= FALSE, message=FALSE, fig.align='center', fig.cap='Some cool caption', out.width='0.75\\linewidth', fig.pos='H'}
 knitr::include_graphics("HW3Gorchels-1.png")
