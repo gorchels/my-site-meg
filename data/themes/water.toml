@@ -1,0 +1,21 @@
+# Theme metadata
+# This theme is based off of the "alison" theme created by https://alison.rbind.io/
+# I used this color palette https://colorpalettes.net/color-palette-3780/
+name = "water"
+
+# Is theme light or dark?
+light = true
+
+# Primary
+primary = "#3286aa"
+
+# Menu
+menu_primary = "#91bbd1"
+menu_text = "#00356a"
+menu_text_active = "#3286aa"
+menu_title = "#00356a"
+
+# Backgrounds
+background = "#F0F7FA"
+home_section_odd = "#fafbfd"
+home_section_even = "#dce9ef"
