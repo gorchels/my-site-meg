@@ -12,6 +12,7 @@ education:
     year: 2016
 email: ""
 interests:
+- Stormwater Management
 - Green Infrastructure
 - Environmental Equity
 - Data Science
