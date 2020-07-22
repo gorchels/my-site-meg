@@ -27,7 +27,7 @@ date_format = "Jan 2006"
   description = """
   
   * Designed and executed outreach to residential horse owners communicating technical information on reducing pollution loading to local creeks to protect water quality and comply with the County’s TMDL
-  * Overhauled 200-page manual on water conscious landscaping manual to include modern formatting and water polices
+  * Overhauled 200-page manual on water conscious landscaping to include modern formatting and water polices
   * Coordinated with 19 water agencies to execute water efficiency programs and provide technical assistance to those agencies by collecting, visualizing, and analyzing water data in Microsoft Excel and Access
   * Established new spatial data analysis system to determine budget requirements of recent trash capturing legislation
   * Collected and managed legally required water data to build documents demonstrating the county’s compliance to water quantity and water quality regulations
@@ -50,8 +50,23 @@ date_format = "Jan 2006"
 
   * Calculated energy offsets from a rain capture program for the City of Austin, TX using an Excel model to show the additional benefits from adopting green infrastructure for stormwater management
   
-  """
+   """
+
+  [[experience]]
+  title = "Earth & Environmental Science Teaching Assistant"
+  company = "University of California, Santa Barbara"
+  company_url = "https://www.ucsb.edu/"
+  location = "Santa Barbara, California"
+  date_start = "2018-09-01"
+  date_end = "2020-04-05"
+  description = """
   
+  * Instructed and managed between 60-80 students in classroom and laboratory settings
+  
+  * Exceeded department excellence rating by 5%-20%
+
+  *  Held extra volunteer office hours to help students understand scientific writing and analysis
+  """
   [[experience]]
   title = "Assistant Manager"
   company = "Pacifica Coffee"

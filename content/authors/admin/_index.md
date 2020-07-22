@@ -41,6 +41,3 @@ user_groups:
 
 As a water manager, Madeline focuses on bringing together diverse stakeholders to increase community resilience. Water uniquely connects people to the environment, but clean drinking water is largely taken for granted in developed countries. Recent domestic and international water management crises highlight how everyone needs to come together to protect their communities’ water. Especially as climate change affects water resource reliability, focusing on water equity work will be crucial for bringing environmental investment to places most in need of water resilience.
 
-Growing up in the wet Pacific Northwest, Madeline has always had an appreciation for the importance of water in both natural and urban ecosystems. She researched aquatic ecology at Wellesley College before deciding to pursue more applied work at the Bren School of Environmental Science & Management, where she graduated with a degree in Water Resource Management and Environmental Data Science in June of 2020. Through her work in water management and data science, she hopes to identify areas in need of environmental investment and improve their resilience and pollution burdens.
-
-When resting her brain, Madeline creates her own vegetarian recipes, goes on long walks with NPR podcasts, and knits.
