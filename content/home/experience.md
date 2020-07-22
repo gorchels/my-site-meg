@@ -63,7 +63,7 @@ date_format = "Jan 2006"
   
   * Instructed and managed 60-80 students in classroom and laboratory settings
 
-  * Developed 1-2.5 hour lessons including lectures, interactive learning activities, and labs 
+  * Developed 1-2.5 hour lessons including lectures, interactive activities, and labs 
   
   * Exceeded department excellence rating by 5%-20%
 
