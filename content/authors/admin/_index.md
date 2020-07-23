@@ -40,5 +40,5 @@ user_groups:
 - Visitors
 ---
 
-As a water manager, I focus on bringing together diverse stakeholders to increase community resilience. Water uniquely connects people to the environment, but clean drinking water is largely taken for granted in developed countries. Recent domestic and international water management crises highlight how everyone needs to come together to protect their communities’ water resources. As climate change affects water resource reliability, focusing on water equity work will be crucial for bringing environmental investment to places most in need of water resilience.
+As a water manager, I focus on bringing together diverse stakeholders to increase community resilience. Water uniquely connects people to the environment, and recent water crises highlight how everyone needs to come together to protect their communities’ water resources. As climate change affects this resource reliability, focusing on water equity work will be crucial for bringing environmental investment to places most in need of resilience.
 
