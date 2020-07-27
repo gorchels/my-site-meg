@@ -13,6 +13,7 @@ education:
 email: ""
 interests:
 - Stormwater Management
+- Water Quality
 - Green Infrastructure
 - Environmental Equity
 - Data Science
