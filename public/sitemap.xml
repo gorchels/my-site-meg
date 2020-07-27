@@ -18,21 +18,6 @@
   </url>
   
   <url>
-    <loc>/talk/example/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/talk/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/publication-type/4/</loc>
     <lastmod>2020-06-20T00:00:00+00:00</lastmod>
   </url>
@@ -79,6 +64,11 @@
   
   <url>
     <loc>/author/madeline-e.-gorchels/</loc>
+    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
     <lastmod>2020-06-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -178,6 +168,21 @@
   </url>
   
   <url>
+    <loc>/talk/winterdef/</loc>
+    <lastmod>2020-02-14T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/</loc>
+    <lastmod>2020-02-14T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/equity/</loc>
+    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/publication-type/2/</loc>
     <lastmod>2019-11-01T00:00:00+00:00</lastmod>
   </url>
@@ -238,6 +243,11 @@
   </url>
   
   <url>
+    <loc>/talk/cuyama/</loc>
+    <lastmod>2019-03-23T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/jupyter/</loc>
     <lastmod>2019-09-05T00:00:00+00:00</lastmod>
   </url>
@@ -290,11 +300,6 @@
   <url>
     <loc>/tag/virus/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/demo/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>

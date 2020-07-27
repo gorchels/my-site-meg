@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>UHI | Madeline E. Gorchels</title>
+    <title>UHI | Madeline Gorchels</title>
     <link>/tag/uhi/</link>
       <atom:link href="/tag/uhi/index.xml" rel="self" type="application/rss+xml" />
     <description>UHI</description>
@@ -61,6 +61,14 @@
 &lt;p&gt;Tree canopy cover is based off a 2014 City of Austin raster dataset. Contact for further details.&lt;/p&gt;
 &lt;/div&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Evaluating the Multiple Benefits of Urban Rainwater Capture in Austin, TX</title>
+      <link>/project/external-project/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>/project/external-project/</guid>
+      <description></description>
     </item>
     
   </channel>

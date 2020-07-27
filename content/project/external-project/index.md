@@ -6,6 +6,10 @@ image:
   focal_point: Austin
 summary: 
 tags:
-- Demo
+- UHI
+- Energy
+- Data Science
+- Environmental Equity
+- Water Resources
 title: Evaluating the Multiple Benefits of Urban Rainwater Capture in Austin, TX
 ---

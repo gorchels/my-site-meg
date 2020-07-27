@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Data Science | Madeline E. Gorchels</title>
+    <title>Data Science | Madeline Gorchels</title>
     <link>/tag/data-science/</link>
       <atom:link href="/tag/data-science/index.xml" rel="self" type="application/rss+xml" />
     <description>Data Science</description>
@@ -18,6 +18,22 @@
       <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
       <guid>/publication/journal-article/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Finding Optimal Areas for Wind Developement</title>
+      <link>/project/wind/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/project/wind/</guid>
+      <description>
+
+
+&lt;p&gt;Wind power is an essential tool to reduce greenhouse gas emissions. However, installing wind projects poses challenges from permitting to NIMBY-ism. As part of a spatial analysis and environmental management course, I developed an ArcMap tool that takes information on roads, cities, airports, potential for fires, and land use to generate optimal sites for wind development. The following map shows an example of this tool being used for Santa Barbara County. The areas shown below are the 10 largest contiguous areas that met all criteria, though many more sites were found.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;HW3Gorchels-1.png&#34; /&gt;
+
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
@@ -53,6 +69,14 @@
 &lt;p&gt;Tree canopy cover is based off a 2014 City of Austin raster dataset. Contact for further details.&lt;/p&gt;
 &lt;/div&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Evaluating the Multiple Benefits of Urban Rainwater Capture in Austin, TX</title>
+      <link>/project/external-project/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>/project/external-project/</guid>
+      <description></description>
     </item>
     
   </channel>
