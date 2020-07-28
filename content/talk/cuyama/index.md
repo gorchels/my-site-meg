@@ -6,7 +6,7 @@ address:
   postcode: "93106"
   region: CA
 all_day: false
-authors: []
+authors:
 date: "2019-03-23T10:00:00Z"
 date_end: "2019-03-23T10:20:00Z"
 event_url: https://example.org
