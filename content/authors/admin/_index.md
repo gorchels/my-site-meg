@@ -41,5 +41,7 @@ user_groups:
 - Visitors
 ---
 
-As a water manager, I focus on bringing together diverse stakeholders to increase community resilience. Water uniquely connects people to the environment, and recent water crises highlight how everyone needs to come together to protect their communities’ water resources. As climate change affects this resource reliability, focusing on water equity work will be crucial for bringing environmental investment to places most in need of resilience.
+As an environmental manager, I focus on bringing together diverse stakeholders to increase community resilience. Through my experience working on green stormwater infrastructure, aquatic ecosystems, and community water quality, I've seen how water uniquely connects people to the environment. Recent water crises highlight how everyone needs to come together to protect their water resources. As climate change affects this resource reliability, focusing on water equity work will be crucial for bringing environmental investment to places most in need of resilience.
+
+Some fun facts: I’m an experienced hiker, I have a kitten named Comet, and I always have baked goods for my friends and family.
 
