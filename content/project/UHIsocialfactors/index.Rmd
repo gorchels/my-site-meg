@@ -131,7 +131,7 @@ tree_plot = ggplot(census_social)+
 ```{r, echo=FALSE, message=FALSE}
 income_plot 
 tree_plot
-#uhi_plot
+uhi_plot
 ```
 
 This visual association is backed up by regressional analysis. There is a significant association between tree cover and median income for the Austin area (see figure below, *** indicates p<0.001).  
