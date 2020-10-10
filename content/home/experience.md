@@ -19,6 +19,22 @@ date_format = "Jan 2006"
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 
 [[experience]]
+  title = "Stormwater Outreach Coordinator"
+  company = "Town of Braintree"
+  company_url = "https://www.braintreema.gov/"
+  location = "Braintree, Massachusetts"
+  date_start = "2020-09-28"
+  date_end = ""
+  description = """
+
+As the Stormwater Outreach Coordinator for the Town of Braintree, I manage public engagement with Braintree's critical water quality issues.
+ * Preform spatial analysis in AutoCAD Map 3D and ArcGIS to identify key stakeholders and design maps for grant applications and outreach materials
+ * Write federal and state grant applications
+ * Identified language gap in outreach materials and added Chinese, Spanish, and Vietnamese resources
+ * Launched Clean Water Braintree Facebook, Instagram, and Twitter accounts
+  """
+
+[[experience]]
   title = "Environmental Planning Intern"
   company = "Charles River Watershed Association"
   company_url = "https://www.crwa.org/"
