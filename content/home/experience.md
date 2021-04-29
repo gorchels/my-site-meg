@@ -23,7 +23,7 @@ date_format = "Jan 2006"
   company = "Water Systems Optimization"
   company_url = "https://www.wso.us"
   location = "Somerville, Massachusetts"
-  date_start = "2020-04-26"
+  date_start = "2021-04-26"
   date_end = ""
   description = """
 
