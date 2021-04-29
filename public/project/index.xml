@@ -177,5 +177,69 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Star Water Utility Production Analysis</title>
+      <link>/project/starwater/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/starwater/</guid>
+      <description>
+
+
+&lt;style type=&#34;text/css&#34;&gt;
+  body{
+  font-size: 20pt;
+  font-family: Garamond;
+}
+&lt;/style&gt;
+&lt;div id=&#34;section&#34; class=&#34;section level1 tabset&#34;&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;The Star Utility has three inputs: Canyon Lake, the Aspen Lane Well Field, and the Wurzbach Reservoir (which is fed by the Wurzbach Well Field)&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;StarUtility/www/star_smaller.png&#34; /&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;overall-production&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Overall Production&lt;/h2&gt;
+&lt;p&gt;The overall production for the Star Water Utility in 2012 was 15,612 million gallons.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/project/starwater/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;individual-production&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Individual Production&lt;/h2&gt;
+&lt;p&gt;Production was highest for Wurzbach Reservoir at 10,540 MG, followed by Canyon Lake at 3,060 MG, and then the Apsen Lane Well Field at 2,010 MG. &lt;img src=&#34;/project/starwater/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;wurzbach&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Wurzbach&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/project/starwater/index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/project/starwater/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/project/starwater/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;aspen-lane&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Aspen Lane&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/project/starwater/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;notes&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Notes&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;Wurzbach Well 4 had production over 60 MG on March 25, 2012 and May 17, 2012.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Aspen Lane Well 1 had negative production on May 17th-18th and September 11th-12th.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Increases in demand during summer months was satisfied through ground water.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Between the spikes observed in Wurzbach Well 4 and the total difference between the Wursbach Well Field and Wurzbach Reservoir, around 335 MG could potential be saved through system efficiencies.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;questions&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Questions&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;What is the geological connectivity between water sources? Are any systems hydrologically connected outside of water infrastructure?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;What is the calibration schedule for flow meters in Aspen Lane Well Field? Is it different than the Wurzbach Well Field?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;What is the cost per acre-foot for each of your production sources? Which sources would be first priority for efficiency recommendations?&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
