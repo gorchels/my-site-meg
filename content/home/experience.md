@@ -52,13 +52,12 @@ As the Stormwater Outreach Coordinator for the Town of Braintree, I manage publi
   company_url = "https://www.crwa.org/"
   location = "Weston, Massachusetts"
   date_start = "2020-08-15"
-  date_end = ""
+  date_end = "2021-04-23"
   description = """
   
-  * Authored Green Streets Guidance Document for the Town of Natick on how to implement green stormwater infrastructure in public roadways;
- * Organizing, analyzing, and presenting data in GIS and other mapping software;
- * Researching and writing about climate resilience and green infrastructure;
- * Assisting with public outreach events and attending public meetings for current projects
+  * Authored Green Streets Guidance Document for the Town of Natick on how to implement green stormwater infrastructure in public roadways
+ * Organized, analyzed, and presented data in GIS and other mapping software
+ * Created ArcMap model demonstrating areas within potential new wetland buffer zone were in need of protection
   """
 
 [[experience]]
