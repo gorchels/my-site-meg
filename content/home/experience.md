@@ -19,6 +19,18 @@ date_format = "Jan 2006"
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 
 [[experience]]
+  title = "Analyst"
+  company = "E Source (formally Water Systems Optimization)"
+  company_url = "https://www.esource.com/"
+  location = "Cambridge, Massachusetts"
+  date_start = "2021-04-26"
+  date_end = ""
+  description = """
+
+As an Analyst at E Source, I analyze and manage water loss projects in collaboration with water utilities & agencies. I've worked on AWWA water audit compilations, customer meter test results, custom input submissions for the California SWRCB water loss control economic model, and customer billing data.
+  """
+
+[[experience]]
   title = "Data Analyst"
   company = "Water Systems Optimization"
   company_url = "https://www.wso.us"
@@ -27,7 +39,7 @@ date_format = "Jan 2006"
   date_end = ""
   description = """
 
-As the Data Analyst for Water Systems Optimization, I perform data analysis for municipal clients on water loss control.
+As a data analyst at WSO, I analyze and manage water loss projects in collaboration with water utilities & agencies. I've worked on AWWA water audit compilations, customer meter test results, custom input submissions for the California SWRCB water loss control economic model, and customer billing data.
   """
 
 [[experience]]
