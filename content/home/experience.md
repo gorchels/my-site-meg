@@ -27,19 +27,7 @@ date_format = "Jan 2006"
   date_end = ""
   description = """
 
-As an Analyst at E Source, I analyze and manage water loss projects in collaboration with water utilities & agencies. I've worked on AWWA water audit compilations, customer meter test results, custom input submissions for the California SWRCB water loss control economic model, and customer billing data.
-  """
-
-[[experience]]
-  title = "Data Analyst"
-  company = "Water Systems Optimization"
-  company_url = "https://www.wso.us"
-  location = "Somerville, Massachusetts"
-  date_start = "2021-04-26"
-  date_end = ""
-  description = """
-
-As a data analyst at WSO, I analyze and manage water loss projects in collaboration with water utilities & agencies. I've worked on AWWA water audit compilations, customer meter test results, custom input submissions for the California SWRCB water loss control economic model, and customer billing data.
+As an Analyst at E Source, I analyze and manage water loss projects in collaboration with water utilities & agencies. I've consulted with utilities on AWWA water audit compilations, water loss regulation compliance, and management of distribution leakage.
   """
 
 [[experience]]
@@ -51,11 +39,12 @@ As a data analyst at WSO, I analyze and manage water loss projects in collaborat
   date_end = "2021-04-23"
   description = """
 
-As the Stormwater Outreach Coordinator for the Town of Braintree, I manage public engagement with Braintree's critical water quality issues.
- * Preform spatial analysis in AutoCAD Map 3D and ArcGIS to identify key stakeholders and design maps for grant applications and outreach materials
- * Write federal and state grant applications
- * Identified language gap in outreach materials and added Chinese, Spanish, and Vietnamese resources
- * Launched Clean Water Braintree Facebook, Instagram, and Twitter accounts
+As the Stormwater Outreach Coordinator for the Town of Braintree, I managed public engagement with Braintree's critical water quality issues.
+ * Awarded a $12,500 grant to conduct outreach to environmental justice communities
+* Preformed spatial analysis in AutoCAD Map 3D and ArcGIS to identify key stakeholders and design maps for grant applications and outreach materials
+* Managed the implementation of state and federal grants. 
+* Identified language gap in outreach materials and added Chinese, Spanish, and Vietnamese resources
+* Launched Clean Water Braintree Facebook, Instagram, and Twitter accounts
   """
 
 [[experience]]

@@ -42,7 +42,7 @@ user_groups:
 - Cats
 ---
 
-As a data analyst and communicator, I focus on improving reslience in water management. Through my experience working on water loss control, aquatic ecosystems, and green stormwater management, I've seen how water uniquely connects people to the environment. As climate change affects this resource reliability, focusing on water equity work will be crucial for bringing environmental investment to places most in need of resilience.
+As a data and policy analyst, I focus on improving resilience in water management. Through my experience working on water loss control, aquatic ecosystems, and green stormwater management, I've seen how water uniquely connects people to the environment. As climate change affects this resource reliability, focusing on water equity work will be crucial for bringing environmental investment to places most in need of resilience.
 
-Some fun facts: I’ve hiked the mountain on the Toblerone bar; my kitten, Comet, is helping me write this; I recently found the perfect to lemon almond cake recipe for tea with friends. 
+Some fun facts: I’ve hiked the mountain on the Toblerone bar; my cat, Comet, is helping me write this; I have the perfect to lemon almond cake recipe for tea with friends. 
 
