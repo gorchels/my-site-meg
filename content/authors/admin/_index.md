@@ -39,6 +39,7 @@ title: Madeline E. Gorchels
 user_groups:
 - Researchers
 - Visitors
+- Cats
 ---
 
 As a data analyst and communicator, I focus on improving reslience in water management. Through my experience working on water loss control, aquatic ecosystems, and green stormwater management, I've seen how water uniquely connects people to the environment. As climate change affects this resource reliability, focusing on water equity work will be crucial for bringing environmental investment to places most in need of resilience.
