@@ -20,7 +20,7 @@ date_format = "Jan 2006"
 
 [[experience]]
   title = "Analyst"
-  company = "E Source (formally Water Systems Optimization)"
+  company = "E Source (formerly Water Systems Optimization)"
   company_url = "https://www.esource.com/"
   location = "Cambridge, Massachusetts"
   date_start = "2021-04-26"
