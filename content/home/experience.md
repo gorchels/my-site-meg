@@ -27,7 +27,13 @@ date_format = "Jan 2006"
   date_end = ""
   description = """
 
-As an Analyst at E Source, I analyze and manage water loss projects in collaboration with water utilities & agencies. I've consulted with utilities on AWWA water audit compilations, water loss regulation compliance, and management of distribution leakage.
+As an Analyst at E Source, I analyze and manage water loss projects in collaboration with water utilities & agencies. My main duties include:
+
+ * Analyze customer water use data for 10+ water utilities to inform water loss management 
+ * Develop custom scripted analyses for unique water loss investigations
+ * Present findings at national & regional water use efficiency conferences 
+ * Compile & validate AWWA water loss audits for water utilities
+ 
   """
 
 [[experience]]
@@ -113,22 +119,7 @@ As the Stormwater Outreach Coordinator for the Town of Braintree, I managed publ
 
   *  Held extra volunteer office hours to help students understand scientific writing and analysis
   """
-  [[experience]]
-  title = "Assistant Manager"
-  company = "Pacifica Coffee"
-  company_url = "https://pacificacoffee.net/"
-  location = "Corvallis, Oregon"
-  date_start = "2017-04-01"
-  date_end = "2018-06-05"
-  description = """
   
-  * Managed organic wholesale coffee business with 30+ clients
-  
-  * Organized and managed temporary hires
-
-  *  Rebuilt 60% of website by rewriting content, creating graphics, and editing product functions; Started and managed 2 new social media pages
-  """
-
 [[experience]]
   title = "Aquatic Research/Teaching Assistant"
   company = "Woods Hole Marine Biological Laboratories"
