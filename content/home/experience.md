@@ -19,7 +19,7 @@ date_format = "Jan 2006"
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 
 [[experience]]
-  title = "Analyst"
+  title = "Data Analyst"
   company = "E Source (formerly Water Systems Optimization)"
   company_url = "https://www.esource.com/"
   location = "Cambridge, Massachusetts"
@@ -27,7 +27,7 @@ date_format = "Jan 2006"
   date_end = ""
   description = """
 
-As an Analyst at E Source, I analyze and manage water loss projects in collaboration with water utilities & agencies. My main duties include:
+As a Data Analyst at E Source, I analyze and manage water loss projects in collaboration with water utilities & agencies. My main duties include:
 
  * Analyze customer water use data for 10+ water utilities to inform water loss management 
  * Develop custom scripted analyses for unique water loss investigations
